@@ -1,0 +1,12 @@
+.input {
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  border: 1px solid #808080;
+  color: var(--clr-font);
+  font-weight: 400;
+}
+
+.input:focus{
+  border: 1px solid var(--clr-icon);
+}

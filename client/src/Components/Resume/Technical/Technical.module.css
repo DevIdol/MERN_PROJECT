@@ -1,0 +1,16 @@
+.technical-section {
+  margin-top: 30px;
+}
+.technical-title {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.underline {
+  width: 60px;
+  background-color: var(--clr-icon);
+}
+.icon {
+  font-size: 24px;
+  color: var(--clr-icon);
+  margin-top: -6px;
+}

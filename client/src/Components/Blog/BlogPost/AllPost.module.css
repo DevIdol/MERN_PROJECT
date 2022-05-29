@@ -1,0 +1,56 @@
+.blogPost {
+  width: calc(100%-34%);
+  margin-right: 34%;
+  height: 100%;
+  padding-top: 130px;
+}
+
+.card {
+  background-color: transparent !important;
+  box-shadow: 0 4px 4px -4px #808080;
+  border: none !important;
+  margin-bottom: 16px;
+}
+.blogImg {
+  height: 200px;
+  border-radius: 8px;
+}
+.blogTitle {
+  font-size: 18px !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.load {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.loadBtn {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.preloader {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 980px) {
+  .blogPost {
+    width: 100%;
+    margin-right: 0;
+    padding-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .blogImg {
+    height: 180px;
+  }
+}

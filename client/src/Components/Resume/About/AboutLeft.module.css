@@ -1,0 +1,38 @@
+.me {
+  width: 200px;
+  height: 220px;
+}
+.myName {
+  margin-top: 10px;
+  font-weight: 300;
+  font-size: 24px;
+}
+.myPosition {
+  font-weight: 200;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 991px) {
+  .me {
+    width: 180px;
+    height: 200px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .me {
+    width: 160px;
+    height: 180px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .me {
+    width: 140px;
+    height: 160px;
+  }
+  .myName {
+    font-size: 20px;
+  }
+  .myPosition {
+    font-size: 16px;
+  }
+}

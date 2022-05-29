@@ -1,0 +1,8 @@
+.facebook,
+.instagram,
+.twitter,
+.telegram {
+  font-size: 26px;
+  color: var(--clr-icon);
+  margin: 10px;
+}

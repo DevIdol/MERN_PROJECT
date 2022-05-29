@@ -1,0 +1,45 @@
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+}
+.textarea {
+  width: 50%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  border: 1px solid #808080;
+  color: var(--clr-font);
+  font-weight: 400;
+  resize: vertical;
+}
+.textarea:focus{
+  border: 1px solid var(--clr-icon);
+}
+.input-form{
+    width: 50%;
+}
+.button{
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 840px) {
+  .textarea, .input-form {
+    width: 64%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .textarea, .input-form {
+    width: 78%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .textarea, .input-form {
+    width: 94%;
+  }
+}

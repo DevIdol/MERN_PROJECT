@@ -1,0 +1,108 @@
+.adminSettingContainer {
+  padding-top: 80px;
+  width: (100% - 250px);
+  margin-left: 250px;
+  height: 100%;
+  padding-bottom: 60px;
+}
+.title {
+  position: fixed;
+  right: 0;
+  left: 250px;
+  background-color: var(--clr-bg-navbar);
+  box-shadow: 0 4px 4px -4px rgb(128, 128, 128, 0.4);
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.title h1 {
+  font-size: 22px;
+  padding-left: 20px;
+  padding-top: 6px;
+}
+.title span {
+  color: #ff6347;
+  font-size: 14px;
+  padding-right: 20px;
+  cursor: pointer;
+}
+.settingForm {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+}
+.settingImg {
+  display: flex;
+  justify-content: flex-start;
+  margin: 10px 0;
+}
+.settingImg img {
+  width: 60px;
+  height: 60px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+.settingPPIcon {
+  font-size: 26px;
+  color: var(--clr-icon);
+  cursor: pointer;
+}
+.settingForm label {
+  font-size: 16px;
+  margin-top: 20px;
+}
+.settingForm input {
+  color: var(--clr-font);
+  margin: 10px 0;
+  height: 30px;
+  border: none;
+  border-bottom: 1px solid gray;
+  background-color: transparent;
+}
+.settingForm input:focus {
+  border-bottom: 1px solid var(--clr-icon);
+}
+.settingSubmit {
+  margin: 40px 0;
+}
+.showPass {
+  padding: 0px 0 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.showPass input {
+  cursor: pointer;
+  margin-right: 6px;
+  margin-left: 6px;
+}
+.showPass span {
+  font-size: 12px;
+}
+.showPass.active {
+  color: var(--clr-icon);
+  font-weight: 500;
+}
+
+@media screen and (max-width: 960px) {
+  .adminSettingContainer {
+    width: 100%;
+    margin-left: 0;
+  }
+  .title {
+    left: 0;
+    margin-left: 30px;
+  }
+  .title h5 {
+    padding: 8px 0px 20px 0px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .title span {
+    position: absolute;
+    top: 40px;
+    right: 10px;
+  }
+}

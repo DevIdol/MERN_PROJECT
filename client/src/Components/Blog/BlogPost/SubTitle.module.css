@@ -1,0 +1,19 @@
+.subTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.subTitleLeft{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+.subTitleLeft h5{
+  font-size: 18px;
+}
+.underline{
+  width: 3px;
+  height: 22px;
+  background-color: var(--clr-icon);
+  margin-right: 6px;
+}

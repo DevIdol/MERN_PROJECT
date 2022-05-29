@@ -1,0 +1,24 @@
+.icon {
+  color: var(--clr-icon);
+  font-size: 22px;
+  margin-top: -4px;
+}
+.underline {
+  width: 60px;
+  background-color: var(--clr-icon);
+}
+.btn {
+  color: #808080;
+  border: 1px solid #808080;
+  padding: 2px 14px;
+  font-size: 16px;
+  margin: 10px 4px 20px 4px;
+}
+.btn:hover{
+  border: 1px solid var(--clr-icon);
+}
+.btn.active {
+  background-color: var(--clr-icon);
+  border: 1px solid var(--clr-icon);
+  color: var(--clr-bcg);
+}

@@ -1,0 +1,55 @@
+.blogPostSideBar {
+  height: 100%;
+  width: 34%;
+  position: fixed;
+  top: 120px;
+  right: 0;
+  bottom: 0;
+  overflow-x: hidden;
+  padding-bottom: 100px;
+  text-align: center;
+}
+.catTitle {
+  padding: 2px 0px;
+  font-size: 18px;
+  border-bottom: 1px solid #808080;
+  border-top: 1px solid #808080;
+}
+.catLink {
+  padding-top: 10px;
+  cursor: pointer;
+  color: #808080;
+  font-weight: 500;
+  border: 1px solid #808080;
+  padding: 2px 10px;
+  border-radius: 20px;
+}
+.catBtn {
+  padding-top: 14px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.catLink.active,
+.catLink:hover {
+  border: 1px solid var(--clr-icon);
+  background-color: var(--clr-icon);
+  color: var(--clr-bcg);
+  font-weight: 800;
+  transition: var(--transition);
+}
+.blogPostSideBar::-webkit-scrollbar {
+  width: 0;
+}
+@media screen and (max-width: 980px) {
+  .blogPostSideBar {
+    position: static;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 0;
+  }
+}

@@ -1,0 +1,23 @@
+.button {
+  border: 1px solid var(--clr-icon);
+  border-radius: 6px;
+  padding: 8px 20px;
+  background-color: transparent;
+  color: var(--clr-icon);
+  font-size: 16px;
+  transition: var(--transition);
+}
+.button:hover {
+  background-color: var(--clr-icon);
+  color: var(--clr-bcg);
+  transition: var(--transition);
+}
+.button:disabled,
+.button:focus:disabled,
+.button:hover:disabled,
+.button:active:disabled {
+  background: #c0c0c0;
+  border-color: #c0c0c0;
+  color: #666666;
+  cursor: not-allowed;
+}

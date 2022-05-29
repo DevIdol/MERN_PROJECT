@@ -1,0 +1,40 @@
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.mail,
+.github,
+.themeMode {
+  cursor: pointer;
+  color: var(--clr-icon);
+  border-radius: 6px;
+  box-shadow: 0 0 0 1px var(--clr-ani1), 0 0 0 3px var(--clr-ani2),
+    0 0 0 6px var(--clr-ani3);
+  animation: animate 2s infinite linear forwards, rays 2s 2s infinite linear;
+}
+@keyframes animate {
+  0% {
+    box-shadow: none;
+  }
+}
+@keyframes rays {
+  0% {
+    box-shadow: 0 0 0 0px var(--clr-ani1), 0 0 0 2px var(--clr-ani2),
+      0 0 0 4px var(--clr-ani3);
+  }
+  50% {
+    box-shadow: 0 0 0 2px var(--clr-ani1), 0 0 0 4px var(--clr-ani2),
+      0 0 0 10px var(--clr-ani3);
+  }
+  100% {
+    box-shadow: 0 0 0 0px var(--clr-ani1), 0 0 0 2px var(--clr-ani2),
+      0 0 0 4px var(--clr-ani3);
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .navRight {
+    margin-top: -38px;
+  }
+}

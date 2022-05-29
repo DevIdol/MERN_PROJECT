@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+  text-decoration: none !important;
+  font-family: 'Poppins', sans-serif;
+}
+:root {
+  --transition: all 0.6s ease;
+  --text-color: #fff;
+}
+html {
+  scroll-behavior: smooth;
+}
+.dark {
+  /* --clr-bcg:#18191a;*/
+  --clr-bl-bcg: #1c1e21;
+  --clr-bcg: #04071a;
+  --clr-font: #fff;
+  --clr-bg-navbar: rgba(4, 7, 26, 0.9);
+  --clr-icon: #65fcdb;
+  --clr-ani1: rgba(101, 252, 219, 0.4);
+  --clr-ani2: rgba(101, 252, 219, 0.3);
+  --clr-ani3: rgba(101, 252, 219, 0.1);
+}
+.light {
+  --clr-bcg: #fff;
+  --clr-bl-bcg: #ccc;
+  --clr-font: #04071a;
+  --clr-bg-navbar: rgba(255, 255, 255, 0.9);
+  --clr-icon: #db084e;
+  --clr-ani1: rgba(219, 8, 78, 0.4);
+  --clr-ani2: rgba(219, 8, 78, 0.3);
+  --clr-ani3: rgba(219, 8, 78, 0.1);
+}
+
+body {
+  background: var(--clr-bcg) !important;
+  color: var(--clr-font) !important;
+  transition: var(--transition);
+}
+.rdw-editor-toolbar {
+  border: 1px solid #808080 !important;
+  background: var(--clr-bcg) !important;
+  border-radius: 10px 10px 0px 0px !important;
+}
+section,
+header {
+  width: 100%;
+  height: 100%;
+}
+#preloader {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.preloaderIcon {
+  padding-top: 6px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+}
+h1 {
+  font-size: 28px;
+}
+p {
+  font-size: 14px;
+  font-weight: 400;
+}
+a {
+  font-size: 14px;
+  font-weight: 400;
+}
+.ck.ck-toolbar {
+  position: sticky !important;
+  top: 120px !important;
+  z-index: 2;
+  border-top-left-radius: 4px !important;
+  border-top-right-radius: 4px !important;
+  background: var(--clr-bcg) !important;
+}
+.ck-content {
+  background: var(--clr-bcg) !important;
+  padding: 20px 10px !important;
+  border: 1px solid #ccc !important;
+  border-top: none !important;
+}
+
+.ck-insert-table-dropdown__grid,
+.ck-insert-table-dropdown__label,
+.ck-list-styles-list,
+.ck-color-table,
+.ck.ck-list,
+.ck.ck-link-form,
+.ck.ck-media-form {
+  background-color: var(--clr-bcg) !important;
+}
+.ck-collapsible .ck-button{
+  background-color: var(--clr-bcg) !important;
+  color: var(--clr-font);
+}
+
+.ck-rounded-corners .ck.ck-editor__main > .ck-editor__editable,
+.ck.ck-editor__main > .ck-editor__editable.ck-rounded-corners {
+  border: 1px solid #ccc !important;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 4px !important;
+  border-bottom-right-radius: 4px !important;
+}
+.ck blockquote p {
+  background-color: var(--clr-bl-bcg) !important;
+  border-left: 5px solid var(--clr-icon);
+  border-radius: 2px !important;
+}
+
+.description blockquote p::-webkit-scrollbar {
+  width: 0;
+}
+
+.description blockquote p {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  border-left: 5px solid var(--clr-icon);
+  padding: 0 10px;
+  padding-top: 14px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500px;
+  background: var(--clr-bl-bcg) !important;
+}
+.description img {
+  width: 100%;
+  height: 240px;
+}
+
+.ck.ck-button__label,
+.ck.ck-icon {
+  color: var(--clr-font) !important;
+}
+
+.ck.ck-button:hover,
+.ck.ck-button.ck-on {
+  background-color: var(--clr-bl-bcg) !important;
+}
+.ck.ck-input {
+  border: 1px solid var(--clr-icon) !important;
+  background: var(--clr-bcg) !important;
+  color: var(--clr-font) !important;
+}
+
+.ck.ck-input:focus {
+  box-shadow: none !important;
+}

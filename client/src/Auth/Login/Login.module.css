@@ -1,0 +1,55 @@
+.loginCard {
+  width: 380px;
+  height: auto;
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 10px 20px;
+}
+.loginCard label {
+  float: left;
+  padding: 10px 0px 0px 4px;
+}
+.input {
+  width: 100%;
+}
+.showPass {
+  padding: 10px 0 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.showPass input {
+  cursor: pointer;
+  margin-right: 6px;
+  margin-left: 6px;
+}
+.showPass span {
+  font-size: 12px;
+}
+.button {
+  margin-top: 10px;
+}
+.loginFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+.link {
+  color: grey;
+  text-decoration: underline !important;
+  cursor: pointer;
+}
+.link:hover {
+  color: var(--clr-icon);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+@media screen and (max-width: 440px) {
+  .loginCard {
+    width: 90%;
+  }
+}

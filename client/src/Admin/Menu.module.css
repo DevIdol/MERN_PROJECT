@@ -1,0 +1,27 @@
+.toggle {
+  display: none;
+}
+
+.openMenu {
+  position: fixed;
+  top: 80px;
+  left: 0px;
+  z-index: 2;
+  font-size: 24px;
+  color: var(--clr-icon);
+  cursor: pointer;
+  background-color: var(--clr-bg-navbar);
+  box-shadow: 0 4px 4px -4px rgb(128, 128, 128, 0.4);
+  height: 40px;
+  width: 40px;
+  padding: 8px;
+}
+.toggle.active {
+  display: none;
+}
+
+@media screen and (max-width: 960px) {
+  .toggle {
+    display: block;
+  }
+}

@@ -1,0 +1,90 @@
+.adminSideBar {
+  height: 100vh;
+  width: 250px;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  bottom: 0;
+  overflow-x: hidden;
+  box-shadow: 5px 0 5px -5px #808080;
+  z-index: 2;
+  background-color: var(--clr-bcg);
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  padding-left: 20px;
+  z-index: 999;
+}
+.adminSideBar::-webkit-scrollbar {
+  width: 0;
+}
+.adminSideBarHeader {
+  padding-bottom: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.me {
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  border-radius: 50%;
+}
+.adminSideBarHeaderTop {
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.adminName {
+  padding-top: 6px;
+  padding-left: 10px;
+  font-size: 22px;
+  color: var(--clr-font);
+}
+.adminMail {
+  padding-top: 4px;
+  font-size: 14px;
+  font-style: italic;
+  color: #808080;
+}
+.item {
+  padding: 14px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #808080;
+  list-style: none;
+}
+.item:hover {
+  color: var(--clr-font);
+  transition: var(--transition);
+}
+.item.active {
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--clr-icon);
+}
+.adminSideBarIcon {
+  font-size: 22px;
+  padding-right: 10px;
+}
+.overflow {
+  margin-top: -40px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 99;
+}
+@media screen and (max-width: 960px) {
+  .adminSideBar {
+    left: -280px;
+    transition: var(--transition);
+  }
+  .adminSideBar.active {
+    left: 0;
+    transition: var(--transition);
+  }
+}

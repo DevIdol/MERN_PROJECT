@@ -1,0 +1,14 @@
+.contact-title {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.underline {
+  width: 78px;
+  margin: 0 8px;
+  background-color: var(--clr-icon);
+}
+.icon {
+  font-size: 20px;
+  color: var(--clr-icon);
+  margin-top: -8px;
+}

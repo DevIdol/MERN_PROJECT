@@ -1,0 +1,38 @@
+.items {
+  display: flex;
+  flex-direction: row;
+  padding-top: 14px;
+  gap: 34px;
+  margin-left: -38px;
+}
+.item {
+  font-size: 16px;
+  font-weight: 200;
+  color: #c0c0c0;
+}
+.item:hover {
+  color: var(--clr-icon);
+  transition: var(--transition);
+}
+.item.active{
+  color: var(--clr-icon);
+  transition: var(--transition);
+  font-weight: 600;
+}
+
+@media screen and (max-width: 620px) {
+  .items {
+    margin-left: 0;
+    position: absolute;
+    top: 30px;
+    left: 44%;
+    transform: translate(-50%, 0);
+  }
+}
+@media screen and (max-width: 400px) {
+  .items {
+   gap: 22px;
+  }
+}
+
+

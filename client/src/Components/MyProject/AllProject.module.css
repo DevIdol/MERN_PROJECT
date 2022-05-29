@@ -1,0 +1,41 @@
+.card {
+    position: relative;
+    background-color: transparent !important;
+    border: 1px solid #808080;
+    height: 240px;
+    margin-bottom: 20px;
+  }
+  .img {
+    height: 70%;
+    padding: 4px;
+    border-radius: 20px;
+    /* object-fit: cover; */
+  }
+  .subTitle {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 0 6px 6px 0px;
+    color: #fff;
+    padding: 4px;
+    position: absolute;
+    top: 52%;
+    left: 4px;
+  }
+  .title {
+    margin-top: -10px;
+  }
+  .bodyIcon {
+    margin-top: -4px;
+  }
+  .code,
+  .code:hover {
+    float: left;
+    font-size: 22px;
+    color: var(--clr-icon);
+  }
+  .down,
+  .down:hover {
+    float: right;
+    font-size: 22px;
+    color: var(--clr-icon);
+  }
+  

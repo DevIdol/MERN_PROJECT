@@ -1,0 +1,73 @@
+.addUserForm {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+}
+.addUserLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.addUserLeft {
+  font-size: 16px;
+}
+.icon {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--clr-icon);
+  cursor: pointer;
+}
+.profile {
+  width: 160px;
+  height: 140px;
+  border-radius: 20px;
+}
+.addUserRight {
+  display: flex;
+  flex-direction: column;
+}
+.addUserRight label {
+  align-self: flex-start;
+  padding-top: 20px;
+  font-size: 16px;
+}
+.input {
+  border: none;
+  padding: 6px 2px;
+  border-bottom: 1px solid grey;
+  border-radius: 0;
+}
+.input:focus {
+  border: none;
+  padding: 8px 2px;
+  border-bottom: 1px solid var(--clr-icon);
+}
+.showPass {
+  padding: 10px 0 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.showPass input {
+  cursor: pointer;
+  margin-right: 6px;
+  margin-left: 6px;
+}
+.showPass span {
+  font-size: 12px;
+}
+.button {
+  margin-top: 40px;
+}
+@media screen and (max-width: 760px) {
+  .addUserForm {
+    gap: 40px;
+  }
+}
+@media screen and (max-width: 543px) {
+  .addUserForm {
+    gap: 20px;
+  }
+}
