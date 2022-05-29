@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { RiMedalFill } from "react-icons/ri";
 import { Container } from "react-bootstrap";
 import Button from "../../screen/Button";
@@ -11,6 +11,9 @@ import WebProject from "./WebProject"
 const MyProject = () => {
   const [projects, setProjects] = useState(<AllProject />);
   const [isActive, setIsActive] = useState("all");
+  useEffect(()=>{
+    document.title ="DevHub | Projects"
+  }, [])
   return (
     <div style={{ paddingTop: "90px", textAlign: "center" }}>
       <Title

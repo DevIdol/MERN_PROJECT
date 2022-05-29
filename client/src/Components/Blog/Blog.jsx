@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from "react";
+import React, { Fragment, useContext, useEffect } from "react";
 import styles from "./Blog.module.css";
 import { NavLink, Outlet } from "react-router-dom";
 import { postItems } from "./PostItems";
@@ -7,6 +7,7 @@ import { ThemeContext } from "../../Context/ThemeContext/ThemeContext";
 const Blog = () => {
   const [{ theme }] = useContext(ThemeContext);
   const activeColor = theme === "dark" ? "#65fcdb" : "#db084e";
+
   return (
     <Fragment>
       <div className={styles.blog}>

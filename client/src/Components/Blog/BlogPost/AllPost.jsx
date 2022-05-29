@@ -43,6 +43,7 @@ const AllPost = () => {
   const isLoadmore = reverseBlogs.length > loadmore;
   const isLoadBack = loadmore > 2;
   useEffect(() => {
+    document.title = "DevHub | All Blog"
     window.scrollTo(0, 0);
   }, []);
   return (

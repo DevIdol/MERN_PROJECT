@@ -34,6 +34,7 @@ const BlogView = () => {
   const pathID = location.pathname.split("/")[3];
   const [formIsValid, setFormIsValid] = useState(false);
   useEffect(() => {
+    document.title = `DevHub | ${title}`
     setLoading(true);
     try {
       const getPosts = async () => {
@@ -60,7 +61,7 @@ const BlogView = () => {
         setLoading(false);
       }
     }
-  }, [pathID, user]);
+  }, [pathID, user, title]);
 
   const handleDesc = (e, editor) => {
     const data = editor.getData();

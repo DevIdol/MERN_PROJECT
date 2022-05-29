@@ -46,6 +46,7 @@ const SoftwarePost = () => {
   const catsSet = new Set(arrCats);
   const catsData = [...catsSet];
   useEffect(() => {
+    document.title = "DevHub | Software"
     window.scrollTo(0, 0);
   }, []);
   return (

@@ -10,6 +10,7 @@ import useFetch from "../../Hooks/UseFetch";
 const AdminDashboard = () => {
   const { data } = useFetch(`/posts`);
   useEffect(() => {
+    document.title = "DevHub | Admin";
     window.scrollTo(0, 0);
   }, []);
   return (

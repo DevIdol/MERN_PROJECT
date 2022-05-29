@@ -46,6 +46,7 @@ const ToolPost = () => {
   const catsSet = new Set(arrCats);
   const catsData = [...catsSet];
   useEffect(() => {
+    document.title = "DevHub | Installation & Tool"
     window.scrollTo(0, 0);
   }, []);
   return (

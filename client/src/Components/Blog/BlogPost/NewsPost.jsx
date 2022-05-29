@@ -44,6 +44,7 @@ const NewsPost = () => {
   const catsSet = new Set(arrCats);
   const catsData = [...catsSet];
   useEffect(() => {
+    document.title = "DevHub | News"
     window.scrollTo(0, 0);
   }, []);
   return (
