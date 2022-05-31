@@ -44,7 +44,6 @@ const UserTable = () => {
   }, []);
   const onDelete = async (id) => {
     const newUsers = users.filter((user) => user._id !== id);
-    setUsers(newUsers);
     try {
       await axios.delete(`/users/${id}`);
       if (decodedUser._id === id) {
@@ -52,6 +51,7 @@ const UserTable = () => {
         navigate("/");
       } else {
         setMessage("User has been deleted!");
+        setUsers(newUsers);
         setTimeout(() => {
           setMessage();
         }, 5000);
@@ -114,7 +114,7 @@ const UserTable = () => {
                   <th>Username</th>
                   <th>Email</th>
                   <th>Role</th>
-                  <th>Update</th>
+                  <th>Edit</th>
                   <th>Delete</th>
                 </tr>
               </thead>

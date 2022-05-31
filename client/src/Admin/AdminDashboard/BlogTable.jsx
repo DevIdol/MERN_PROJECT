@@ -64,11 +64,12 @@ const BlogTable = ({ itemsPerPage }) => {
 
   const onDelete = async (id) => {
     const newBlogs = blogs.filter((blog) => blog._id !== id);
-    setBlogs(newBlogs);
     try {
       if (decodedUser.isAdmin || decodedUser.username) {
         await axios.delete(`/posts/${id}`);
         setMessage("Post has been deleted!");
+
+        setBlogs(newBlogs);
         setTimeout(() => {
           setMessage("");
         }, 5000);
@@ -134,12 +135,12 @@ const BlogTable = ({ itemsPerPage }) => {
               <Table>
                 <thead>
                   <tr>
-                    <th>id</th>
+                    <th>No</th>
                     <th>Author</th>
                     <th>Title</th>
                     <th>Category</th>
                     <th>Date</th>
-                    <th>Update</th>
+                    <th>Edit</th>
                     <th>Delete</th>
                   </tr>
                 </thead>

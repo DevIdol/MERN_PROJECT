@@ -24,16 +24,18 @@ const ResetPassword = () => {
   const navigate = useNavigate();
   const url = `/password-reset/${param.id}/${param.token}`;
   useEffect(() => {
+    setLoading(true);
     const verifyUrl = async () => {
       try {
         await axios.get(url);
-        console.log(url);
         setValidUrl(true);
+        setLoading(false)
       } catch (error) {
         setValidUrl(false);
       }
     };
     verifyUrl();
+    setLoading(false)
   }, [param, url]);
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -84,7 +86,7 @@ const ResetPassword = () => {
     <Fragment>
       {loading ? (
         <div id="preloader">
-          <h1>Loading</h1>
+          <h5>Loading</h5>
           <ReactLoading
             className="preloaderIcon"
             type={"bubbles"}
@@ -97,7 +99,7 @@ const ResetPassword = () => {
         <Fragment>
           {validUrl ? (
             <Card className={styles.resetPassCard}>
-              <h2>Reset Password</h2>
+              <h5>Reset Password</h5>
               {message && (
                 <p
                   style={{

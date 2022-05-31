@@ -51,7 +51,7 @@ const ForgotPassword = () => {
   }, [email]);
   return (
     <Card className={styles.forgotPassCard}>
-      <h2>Forgot Password</h2>
+      <h5>Forgot Password</h5>
       {message && (
         <p style={{ fontSize: "14px", color: "teal", paddingTop: "10px" }}>
           {message}
