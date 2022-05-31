@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { Fragment, useContext, useState } from "react";
+import React, { Fragment, useContext, useEffect, useState } from "react";
 import profile from "../../assets/profile.png";
 import { Table } from "react-bootstrap";
 import Button from "../../screen/Button";
@@ -7,7 +7,6 @@ import styles from "./UserTable.module.css";
 
 import { AuthContext } from "../../Context/AuthContext/AuthContext";
 import { useNavigate } from "react-router-dom";
-import useFetch from "../../Hooks/UseFetch";
 import ReactLoading from "react-loading";
 import { ThemeContext } from "../../Context/ThemeContext/ThemeContext";
 import jwt from "jwt-decode";
@@ -21,9 +20,31 @@ const UserTable = () => {
   const decodedUser = jwt(user);
   const [message, setMessage] = useState("");
   const [err, setErr] = useState("");
-  const { data, loading, error } = useFetch("/users");
-
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const { data: res } = await axios.get("/users");
+        setUsers(res.data);
+      } catch (error) {
+        if (
+          error.response &&
+          error.response.status >= 400 &&
+          error.response.status <= 500
+        ) {
+          setError(error.response.data.message);
+        }
+      }
+      setLoading(false);
+    };
+    fetchData();
+  }, []);
   const onDelete = async (id) => {
+    const newUsers = users.filter((user) => user._id !== id);
+    setUsers(newUsers);
     try {
       await axios.delete(`/users/${id}`);
       if (decodedUser._id === id) {
@@ -31,7 +52,9 @@ const UserTable = () => {
         navigate("/");
       } else {
         setMessage("User has been deleted!");
-        navigate(0);
+        setTimeout(() => {
+          setMessage();
+        }, 5000);
       }
     } catch (error) {
       if (
@@ -96,7 +119,7 @@ const UserTable = () => {
                 </tr>
               </thead>
               <tbody>
-                {data.map((data, index) => (
+                {users.map((data, index) => (
                   <tr key={index}>
                     <td>{index + 1}</td>
                     <td>
@@ -108,12 +131,12 @@ const UserTable = () => {
                     </td>
                     <td>{data.username}</td>
                     <td>{data.email}</td>
-                    <td>{data.isAdmin ? 1 : 0}</td>
+                    <td>{data.isAdmin ? "Admin" : "Co-Admin"}</td>
                     <td>
                       <Button
                         onClick={() => {
                           decodedUser.id === data._id
-                            ? navigate("/admin/setting")
+                            ? navigate("/admin/account")
                             : setErr("It's not your account!");
                         }}
                         disabled={

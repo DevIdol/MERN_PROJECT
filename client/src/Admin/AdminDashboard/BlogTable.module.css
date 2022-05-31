@@ -27,10 +27,7 @@ tr td {
   border: 1px solid gray !important;
   text-align: center;
 }
-.catLink,
-.catLink:hover {
-  color: inherit;
-}
+
 .load {
   padding: 0 30px;
   display: flex;

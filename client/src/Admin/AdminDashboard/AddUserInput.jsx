@@ -6,7 +6,9 @@ import Input from "../../screen/Input";
 import Button from "../../screen/Button";
 import { Spinner } from "react-bootstrap";
 import axios from "axios";
+import { useNavigate } from "react-router";
 const AddUserInput = () => {
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [file, setFile] = useState("");
   const [email, setEmail] = useState("");
@@ -38,9 +40,10 @@ const AddUserInput = () => {
       setError("");
       setLoading(false);
       setMessage("User added successfully!");
+      navigate(-1)
       setTimeout(() => {
         setMessage("");
-      }, 10000);
+      }, 5000);
     } catch (error) {
       if (
         error.response &&
@@ -49,8 +52,7 @@ const AddUserInput = () => {
       ) {
         setMessage("");
         setLoading(false);
-        setError("Internet Connection Fail...!");
-        console.log(error.response.data.message)
+        setError(error.response.data.message);
         setTimeout(() => {
           setError("");
         }, 10000);

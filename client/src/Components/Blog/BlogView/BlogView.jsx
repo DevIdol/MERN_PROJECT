@@ -34,7 +34,7 @@ const BlogView = () => {
   const pathID = location.pathname.split("/")[3];
   const [formIsValid, setFormIsValid] = useState(false);
   useEffect(() => {
-    document.title = `DevHub | ${title}`
+    document.title = `DevHub | BlogView`;
     setLoading(true);
     try {
       const getPosts = async () => {
@@ -61,7 +61,7 @@ const BlogView = () => {
         setLoading(false);
       }
     }
-  }, [pathID, user, title]);
+  }, [pathID, user]);
 
   const handleDesc = (e, editor) => {
     const data = editor.getData();
@@ -69,6 +69,7 @@ const BlogView = () => {
   };
 
   const handleUpdate = async () => {
+    setLoading(true)
     try {
       if (decodedUser.isAdmin || decodedUser.username) {
         await axios.put(`/posts/${post._id}`, {
@@ -79,6 +80,7 @@ const BlogView = () => {
       } else {
         setError("Something Wrong!");
       }
+      setLoading(false)
       setUpdateBlog(false);
     } catch (error) {
       if (

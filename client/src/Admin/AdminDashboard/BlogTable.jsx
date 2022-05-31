@@ -1,12 +1,11 @@
-import React, { Fragment, useContext, useState } from "react";
+import React, { Fragment, useContext, useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import Button from "../../screen/Button";
 import styles from "./BlogTable.module.css";
 import ReactLoading from "react-loading";
 import axios from "axios";
-import useFetch from "../../Hooks/UseFetch";
 import { ThemeContext } from "../../Context/ThemeContext/ThemeContext";
 import { AuthContext } from "../../Context/AuthContext/AuthContext";
 import jwt from "jwt-decode";
@@ -15,14 +14,36 @@ const BlogTable = ({ itemsPerPage }) => {
   const loadingColor = theme === "dark" ? "#65fcdb" : "#db084e";
   const { user } = useContext(AuthContext);
   const decodedUser = jwt(user);
-  const { data, loading, error } = useFetch(`/posts`);
   let [searchParams] = useSearchParams();
   const [loadmore, setLoadmore] = useState(4);
   const navigate = useNavigate();
   const [message, setMessage] = useState("");
   const [err, setErr] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [blogs, setBlogs] = useState([]);
 
-  const reverseBlogs = data
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const { data: res } = await axios.get("/posts");
+        setBlogs(res.data);
+      } catch (error) {
+        if (
+          error.response &&
+          error.response.status >= 400 &&
+          error.response.status <= 500
+        ) {
+          setError(error.response.data.message);
+        }
+      }
+      setLoading(false);
+    };
+    fetchData();
+  }, []);
+
+  const reverseBlogs = blogs
     .slice(0)
     .reverse()
     .filter((blog) => {
@@ -42,11 +63,15 @@ const BlogTable = ({ itemsPerPage }) => {
   const isLoadBack = loadmore > 4;
 
   const onDelete = async (id) => {
+    const newBlogs = blogs.filter((blog) => blog._id !== id);
+    setBlogs(newBlogs);
     try {
       if (decodedUser.isAdmin || decodedUser.username) {
         await axios.delete(`/posts/${id}`);
         setMessage("Post has been deleted!");
-        navigate(0);
+        setTimeout(() => {
+          setMessage("");
+        }, 5000);
       } else {
         setErr("Admin only can delete!");
         setTimeout(() => {
@@ -125,17 +150,8 @@ const BlogTable = ({ itemsPerPage }) => {
                         <tr key={index}>
                           <td>{index + 1}</td>
                           <td>{blog.username}</td>
-                          <td key={blog.title.index}>
-                            {blog.title.slice(0, 20)}...
-                          </td>
-                          <td>
-                            <Link
-                              className={styles.catLink}
-                              to={`?category=${blog.cat.toLowerCase()}`}
-                            >
-                              {blog.cat}
-                            </Link>
-                          </td>
+                          <td>{blog.title}</td>
+                          <td>{blog.cat}</td>
                           <td>{new Date(blog.createdAt).toDateString()}</td>
                           <td>
                             <Button

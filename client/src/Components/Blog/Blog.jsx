@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useEffect } from "react";
+import React, { Fragment, useContext } from "react";
 import styles from "./Blog.module.css";
 import { NavLink, Outlet } from "react-router-dom";
 import { postItems } from "./PostItems";
