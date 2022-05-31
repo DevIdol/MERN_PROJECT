@@ -6,7 +6,7 @@ export const createPost = async (req, res, next) => {
     const savedPost = await newPost.save()
     res.status(201).json({ data: savedPost })
   } catch (error) {
-    next(error)
+    next(createError(500, "Internet Connection Fail!"))
   }
 }
 
@@ -19,7 +19,7 @@ export const updatePost = async (req, res, next) => {
     )
     res.status(200).json({ data: updatedPost })
   } catch (err) {
-    next(err)
+    next(createError(500, "Internet Connection Fail!"))
   }
 }
 export const deletePost = async (req, res, next) => {
@@ -27,7 +27,7 @@ export const deletePost = async (req, res, next) => {
     await Post.findByIdAndDelete(req.params.id)
     res.status(200).json({ message: 'Post has been deleted!' })
   } catch (err) {
-    next(err)
+    next(createError(500, "Internet Connection Fail!"))
   }
 }
 export const getPost = async (req, res, next) => {
@@ -35,7 +35,7 @@ export const getPost = async (req, res, next) => {
     const post = await Post.findById(req.params.id)
     res.status(200).json({ data: post })
   } catch (err) {
-    next(err)
+    next(createError(500, "Internet Connection Fail!"))
   }
 }
 export const getPosts = async (req, res, next) => {
@@ -56,6 +56,6 @@ export const getPosts = async (req, res, next) => {
     }
     res.status(200).json({data: posts})
   } catch (err) {
-    next(err)
+    next(createError(500, "Internet Connection Fail!"))
   }
 }

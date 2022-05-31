@@ -25,7 +25,7 @@ export const register = async (req, res, next) => {
 
     res.status(200).send({ message: 'Admin Only Can Register!' })
   } catch (err) {
-    next(err)
+    next(createError(500, "Internet Connection Fail!"))
   }
 }
 export const login = async (req, res, next) => {
@@ -72,6 +72,6 @@ export const login = async (req, res, next) => {
       .status(200)
       .json({ data: token })
   } catch (err) {
-    next(err)
+    next(createError(500, "Internet Connection Fail!"))
   }
 }

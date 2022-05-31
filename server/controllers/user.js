@@ -22,7 +22,7 @@ export const emailVerify = async (req, res, next) => {
 
     res.status(200).json({ message: 'Email verified successfully!' })
   } catch (error) {
-    next(error)
+    next(createError(500, "Internet Connection Fail!"))
   }
 }
 
@@ -39,7 +39,7 @@ export const updateUser = async (req, res, next) => {
     )
     res.status(200).json({ data: updatedUser })
   } catch (err) {
-    next(err)
+    next(createError(500, "Internet Connection Fail!"))
   }
 }
 export const deleteUser = async (req, res, next) => {
@@ -47,7 +47,7 @@ export const deleteUser = async (req, res, next) => {
     await User.findByIdAndDelete(req.params.id)
     res.status(200).json({ message: 'User has been deleted!' })
   } catch (err) {
-    next(err)
+    next(createError(500, "Internet Connection Fail!"))
   }
 }
 export const getUser = async (req, res, next) => {
@@ -55,7 +55,7 @@ export const getUser = async (req, res, next) => {
     const user = await User.findById(req.params.id)
     res.status(200).json({ data: user })
   } catch (err) {
-    next(err)
+    next(createError(500, "Internet Connection Fail!"))
   }
 }
 export const getUsers = async (req, res, next) => {
@@ -63,6 +63,6 @@ export const getUsers = async (req, res, next) => {
     const users = await User.find()
     res.status(200).json({ data: users })
   } catch (err) {
-    next(err)
+    next(createError(500, "Internet Connection Fail!"))
   }
 }

@@ -24,7 +24,7 @@ export const forgotPassword = async (req, res, next) => {
     await SendMail(user.email, 'Password Reset', url)
     res.status(200).send({ message: 'Password reset link sent successfully!' })
   } catch (error) {
-    next(error)
+    next(createError(500, "Internet Connection Fail!"))
   }
 }
 
@@ -45,7 +45,7 @@ export const passwordVerifyURL = async (req, res, next) => {
 
     res.status(200).send({ message: 'Valid URL' })
   } catch (error) {
-    next(error)
+    next(createError(500, "Internet Connection Fail!"))
   }
 }
 
@@ -73,6 +73,6 @@ export const resetPassword = async (req, res, next) => {
 
     res.status(200).json({ message: 'password reset successfully' })
   } catch (error) {
-    next(error)
+    next(createError(500, "Internet Connection Fail!"))
   }
 }
